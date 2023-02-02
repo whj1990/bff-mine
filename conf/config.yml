@@ -1,0 +1,5 @@
+appid: bff-rec-visual
+cluster: dev
+url: "http://bgaplo.ibbtv.cn/config/"
+namespace: application
+secret: 98c6b8c86f0c404fbe7442162a6628a8
