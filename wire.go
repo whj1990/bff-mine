@@ -4,10 +4,10 @@
 package main
 
 import (
-	"git.dp.ibbtv.cn/dp-backend/bff-rec-visual/internal/handler"
-	"git.dp.ibbtv.cn/dp-backend/bff-rec-visual/internal/router"
-	"git.dp.ibbtv.cn/dp-backend/go-core/launch"
 	"github.com/google/wire"
+	"github.com/whj1990/bff-mine/internal/handler"
+	"github.com/whj1990/bff-mine/internal/router"
+	"github.com/whj1990/go-core/launch"
 )
 
 func initServer() *launch.RouterQuote {

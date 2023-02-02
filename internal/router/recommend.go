@@ -6,11 +6,11 @@ import (
 	"github.com/whj1990/go-common/constant"
 )
 
-type RecVisualHandler struct {
+type MineHandler struct {
 	mineHandler handler.MineHandler
 }
 
-func (r *RecVisualHandler) SetRouter(app *gin.Engine) {
+func (r *MineHandler) SetRouter(app *gin.Engine) {
 	group := app.Group(constant.MineRouterGroup)
 	group.GET("/review/project/list", r.mineHandler.ReviewProjectList())
 	group.GET("/review/project/detail", r.mineHandler.ReviewProjectDetails())

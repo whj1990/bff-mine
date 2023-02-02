@@ -9,5 +9,5 @@ import (
 var ProviderSet = wire.NewSet(NewMineHandler, rpc.NewMineClient)
 
 func NewMineHandler(client appmine.Client) MineHandler {
-	return &minelHandler{client}
+	return &mineHandler{client}
 }

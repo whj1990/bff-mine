@@ -1,5 +1,5 @@
-appid: bff-rec-visual
+appid: bff-mine
 cluster: dev
-url: "http://bgaplo.ibbtv.cn/config/"
+url: "http://localhost:8070/"
 namespace: application
-secret: 98c6b8c86f0c404fbe7442162a6628a8
+secret: 1ef2980db1ff437d970747fb72b794ca

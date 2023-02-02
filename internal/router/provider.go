@@ -7,6 +7,6 @@ import (
 
 var ProviderSet = wire.NewSet(NewMinelRouter)
 
-func NewMinelRouter(recVisualHandler handler.MineHandler) *RecVisualHandler {
-	return &RecVisualHandler{recVisualHandler}
+func NewMinelRouter(mineHandler handler.MineHandler) *MineHandler {
+	return &MineHandler{mineHandler}
 }

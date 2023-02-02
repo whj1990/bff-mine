@@ -10,7 +10,6 @@ func main() {
 	logger, closer := launch.InitPremise()
 	defer logger.Sync()
 	defer closer.Close()
-
 	launch.InitHttpServer(initServer().Routes...)
 }
 

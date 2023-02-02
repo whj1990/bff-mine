@@ -1,0 +1,260 @@
+definitions:
+  api.ReviewProjectData:
+    properties:
+      createdDate:
+        type: string
+      createdUser:
+        type: string
+      deleted:
+        type: integer
+      description:
+        type: string
+      id:
+        type: integer
+      modeCode:
+        type: string
+      name:
+        type: string
+      status:
+        type: integer
+      updatedDate:
+        type: string
+      updatedUser:
+        type: string
+    type: object
+  api.ReviewProjectDetailResponse:
+    properties:
+      data:
+        items:
+          $ref: '#/definitions/api.ReviewProjectData'
+        type: array
+    type: object
+  api.ReviewProjectListResponse:
+    properties:
+      data:
+        items:
+          $ref: '#/definitions/api.ReviewProjectData'
+        type: array
+      pageNum:
+        type: integer
+      pageSize:
+        type: integer
+      total:
+        type: integer
+    type: object
+  api.SaveResponse:
+    properties:
+      rowsAffected:
+        type: integer
+    type: object
+  handler.response:
+    properties:
+      code:
+        type: integer
+      data: {}
+      error:
+        type: string
+    type: object
+  stru.IdParam:
+    properties:
+      id:
+        type: integer
+    type: object
+  stru.ReviewProjectSaveData:
+    properties:
+      description:
+        type: string
+      id:
+        type: integer
+      modeCode:
+        type: string
+      name:
+        type: string
+    required:
+    - modeCode
+    - name
+    type: object
+  stru.ReviewProjectSaveParam:
+    properties:
+      action:
+        type: string
+      data:
+        $ref: '#/definitions/stru.ReviewProjectSaveData'
+    required:
+    - action
+    - data
+    type: object
+  stru.StatusParam:
+    properties:
+      id:
+        type: integer
+      remark:
+        type: string
+      status:
+        type: integer
+    type: object
+info:
+  contact: {}
+paths:
+  /v1/recvisual/review/project/delete:
+    post:
+      parameters:
+      - description: token
+        in: header
+        name: authorization
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/stru.IdParam'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: ok
+          schema:
+            allOf:
+            - $ref: '#/definitions/handler.response'
+            - properties:
+                data:
+                  $ref: '#/definitions/api.SaveResponse'
+              type: object
+      summary: 项目信息删除
+      tags:
+      - review
+  /v1/recvisual/review/project/detail:
+    get:
+      parameters:
+      - description: token
+        in: header
+        name: authorization
+        required: true
+        type: string
+      - in: query
+        items:
+          type: integer
+        name: ids[]
+        type: array
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: ok
+          schema:
+            allOf:
+            - $ref: '#/definitions/handler.response'
+            - properties:
+                data:
+                  $ref: '#/definitions/api.ReviewProjectDetailResponse'
+              type: object
+      summary: 获取项目详情
+      tags:
+      - review
+  /v1/recvisual/review/project/list:
+    get:
+      parameters:
+      - description: token
+        in: header
+        name: authorization
+        required: true
+        type: string
+      - in: query
+        name: id
+        type: integer
+      - in: query
+        name: modeCode
+        type: string
+      - in: query
+        name: name
+        type: string
+      - in: query
+        name: pageNum
+        required: true
+        type: integer
+      - in: query
+        name: pageSize
+        required: true
+        type: integer
+      - in: query
+        name: showStatus
+        type: integer
+      - in: query
+        name: status
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: ok
+          schema:
+            allOf:
+            - $ref: '#/definitions/handler.response'
+            - properties:
+                data:
+                  $ref: '#/definitions/api.ReviewProjectListResponse'
+              type: object
+      summary: 获取项目列表
+      tags:
+      - review
+  /v1/recvisual/review/project/save:
+    post:
+      parameters:
+      - description: token
+        in: header
+        name: authorization
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/stru.ReviewProjectSaveParam'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: ok
+          schema:
+            allOf:
+            - $ref: '#/definitions/handler.response'
+            - properties:
+                data:
+                  $ref: '#/definitions/api.SaveResponse'
+              type: object
+      summary: 项目信息存储
+      tags:
+      - review
+  /v1/recvisual/review/project/upStatus:
+    post:
+      parameters:
+      - description: token
+        in: header
+        name: authorization
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/stru.StatusParam'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: ok
+          schema:
+            allOf:
+            - $ref: '#/definitions/handler.response'
+            - properties:
+                data:
+                  $ref: '#/definitions/api.SaveResponse'
+              type: object
+      summary: 项目状态更新
+      tags:
+      - review
+swagger: "2.0"

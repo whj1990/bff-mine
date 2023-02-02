@@ -2,9 +2,10 @@ package handler
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/whj1990/app-mine/internal/handler/stru"
+	"github.com/go-playground/validator/v10"
 	"github.com/whj1990/app-mine/kitex_gen/api"
-	"github.com/whj1990/app-mine/kitex_gen/api/appine"
+	"github.com/whj1990/app-mine/kitex_gen/api/appmine"
+	"github.com/whj1990/bff-mine/internal/handler/stru"
 	"github.com/whj1990/go-core/handler"
 	"github.com/whj1990/go-core/util"
 )
@@ -17,7 +18,7 @@ type MineHandler interface {
 	ReviewProjectDelete() gin.HandlerFunc
 }
 type mineHandler struct {
-	appineClient appine.Client
+	appmineClient appmine.Client
 }
 
 // @Summary 获取项目列表
@@ -34,7 +35,7 @@ func (r *mineHandler) ReviewProjectList() gin.HandlerFunc {
 			handler.HandleErrorResponse(ctx, err)
 			return
 		}
-		res, err := r.appineClient.ReviewProjectList(util.GetRPCContext(ctx), &api.ReviewProjectListParams{
+		res, err := r.appmineClient.ReviewProjectList(util.GetRPCContext(ctx), &api.ReviewProjectListParams{
 			PageNum:    req.PageNum,
 			PageSize:   req.PageSize,
 			Id:         req.Id,
@@ -65,7 +66,7 @@ func (r *mineHandler) ReviewProjectDetails() gin.HandlerFunc {
 			handler.HandleErrorResponse(ctx, err)
 			return
 		}
-		res, err := r.appineClient.ReviewProjectDetails(util.GetRPCContext(ctx), &api.IdsInt64Params{
+		res, err := r.appmineClient.ReviewProjectDetails(util.GetRPCContext(ctx), &api.IdsInt64Params{
 			req.Ids,
 		})
 		if err != nil {
@@ -96,7 +97,7 @@ func (r *mineHandler) ReviewProjectSave() gin.HandlerFunc {
 			handler.HandleErrorResponse(ctx, err)
 			return
 		}
-		res, err := r.appineClient.ReviewProjectSave(util.GetRPCContext(ctx), &api.ReviewProjectSaveParam{
+		res, err := r.appmineClient.ReviewProjectSave(util.GetRPCContext(ctx), &api.ReviewProjectSaveParam{
 			Action: req.Action,
 			Data: &api.ReviewProjectSaveData{
 				Id:          req.Data.Id,
@@ -127,7 +128,7 @@ func (r *mineHandler) ReviewProjectStatus() gin.HandlerFunc {
 			handler.HandleErrorResponse(ctx, err)
 			return
 		}
-		res, err := r.appineClient.ReviewProjectStatus(util.GetRPCContext(ctx), &api.StatusParam{
+		res, err := r.appmineClient.ReviewProjectStatus(util.GetRPCContext(ctx), &api.StatusParam{
 			Id:     req.Id,
 			Status: req.Status,
 		})
@@ -153,7 +154,7 @@ func (r *mineHandler) ReviewProjectDelete() gin.HandlerFunc {
 			handler.HandleErrorResponse(ctx, err)
 			return
 		}
-		res, err := r.appineClient.ReviewProjectDelete(util.GetRPCContext(ctx), &api.IdParam{
+		res, err := r.appmineClient.ReviewProjectDelete(util.GetRPCContext(ctx), &api.IdParam{
 			Id: req.Id,
 		})
 		if err != nil {
