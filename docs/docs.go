@@ -15,7 +15,7 @@ const docTemplate = `{
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
     "paths": {
-        "/v1/recvisual/review/project/delete": {
+        "/mine/review/project/delete": {
             "post": {
                 "produces": [
                     "application/json"
@@ -64,7 +64,7 @@ const docTemplate = `{
                 }
             }
         },
-        "/v1/recvisual/review/project/detail": {
+        "/mine/review/project/detail": {
             "get": {
                 "produces": [
                     "application/json"
@@ -112,7 +112,7 @@ const docTemplate = `{
                 }
             }
         },
-        "/v1/recvisual/review/project/list": {
+        "/mine/review/project/list": {
             "get": {
                 "produces": [
                     "application/json"
@@ -189,7 +189,7 @@ const docTemplate = `{
                 }
             }
         },
-        "/v1/recvisual/review/project/save": {
+        "/mine/review/project/save": {
             "post": {
                 "produces": [
                     "application/json"
@@ -238,7 +238,7 @@ const docTemplate = `{
                 }
             }
         },
-        "/v1/recvisual/review/project/upStatus": {
+        "/mine/review/project/upStatus": {
             "post": {
                 "produces": [
                     "application/json"

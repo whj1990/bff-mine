@@ -27,7 +27,7 @@ type mineHandler struct {
 // @Param authorization header string true "token"
 // @Param query query stru.ReviewProjectListParams false "query"
 // @Success 200 {object} handler.response{data=api.ReviewProjectListResponse} "ok"
-// @Router /v1/recvisual/review/project/list [GET]
+// @Router /mine/review/project/list [GET]
 func (r *mineHandler) ReviewProjectList() gin.HandlerFunc {
 	return func(ctx *gin.Context) {
 		var req stru.ReviewProjectListParams
@@ -58,7 +58,7 @@ func (r *mineHandler) ReviewProjectList() gin.HandlerFunc {
 // @Param authorization header string true "token"
 // @Param query query stru.IdsInt64Params true "query"
 // @Success 200 {object} handler.response{data=api.ReviewProjectDetailResponse} "ok"
-// @Router /v1/recvisual/review/project/detail [GET]
+// @Router /mine/review/project/detail [GET]
 func (r *mineHandler) ReviewProjectDetails() gin.HandlerFunc {
 	return func(ctx *gin.Context) {
 		var req stru.IdsInt64Params
@@ -83,7 +83,7 @@ func (r *mineHandler) ReviewProjectDetails() gin.HandlerFunc {
 // @Param authorization header string true "token"
 // @Param body body stru.ReviewProjectSaveParam true "body"
 // @Success 200 {object} handler.response{data=api.SaveResponse} "ok"
-// @Router /v1/recvisual/review/project/save [POST]
+// @Router /mine/review/project/save [POST]
 func (r *mineHandler) ReviewProjectSave() gin.HandlerFunc {
 	return func(ctx *gin.Context) {
 		var req stru.ReviewProjectSaveParam
@@ -120,7 +120,7 @@ func (r *mineHandler) ReviewProjectSave() gin.HandlerFunc {
 // @Param authorization header string true "token"
 // @Param body body stru.StatusParam true "body"
 // @Success 200 {object} handler.response{data=api.SaveResponse} "ok"
-// @Router /v1/recvisual/review/project/upStatus [POST]
+// @Router /mine/review/project/upStatus [POST]
 func (r *mineHandler) ReviewProjectStatus() gin.HandlerFunc {
 	return func(ctx *gin.Context) {
 		var req stru.StatusParam
@@ -146,7 +146,7 @@ func (r *mineHandler) ReviewProjectStatus() gin.HandlerFunc {
 // @Param authorization header string true "token"
 // @Param body body stru.IdParam true "body"
 // @Success 200 {object} handler.response{data=api.SaveResponse} "ok"
-// @Router /v1/recvisual/review/project/delete [POST]
+// @Router /mine/review/project/delete [POST]
 func (r *mineHandler) ReviewProjectDelete() gin.HandlerFunc {
 	return func(ctx *gin.Context) {
 		var req stru.IdParam

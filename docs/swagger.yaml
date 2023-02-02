@@ -96,7 +96,7 @@ definitions:
 info:
   contact: {}
 paths:
-  /v1/recvisual/review/project/delete:
+  /mine/review/project/delete:
     post:
       parameters:
       - description: token
@@ -125,7 +125,7 @@ paths:
       summary: 项目信息删除
       tags:
       - review
-  /v1/recvisual/review/project/detail:
+  /mine/review/project/detail:
     get:
       parameters:
       - description: token
@@ -153,7 +153,7 @@ paths:
       summary: 获取项目详情
       tags:
       - review
-  /v1/recvisual/review/project/list:
+  /mine/review/project/list:
     get:
       parameters:
       - description: token
@@ -199,7 +199,7 @@ paths:
       summary: 获取项目列表
       tags:
       - review
-  /v1/recvisual/review/project/save:
+  /mine/review/project/save:
     post:
       parameters:
       - description: token
@@ -228,7 +228,7 @@ paths:
       summary: 项目信息存储
       tags:
       - review
-  /v1/recvisual/review/project/upStatus:
+  /mine/review/project/upStatus:
     post:
       parameters:
       - description: token
