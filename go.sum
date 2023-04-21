@@ -472,8 +472,8 @@ github.com/ugorji/go v1.2.7/go.mod h1:nF9osbDWLy6bDVv/Rtoh6QgnvNDpmCalQV5urGCCS6
 github.com/ugorji/go/codec v1.2.7 h1:YPXUKf7fYbp/y8xloBqZOw2qaVggbfwMlI8WM3wZUJ0=
 github.com/ugorji/go/codec v1.2.7/go.mod h1:WGN1fab3R1fzQlVQTkfxVtIBhWDRqOviHU95kRgeqEY=
 github.com/urfave/cli/v2 v2.3.0/go.mod h1:LJmUH05zAU44vOAcrfzZQKsZbVcdbOG8rtL3/XcUArI=
-github.com/whj1990/app-mine v0.0.0-20230202060749-183c0acee2e7 h1:jW0460c7zNvvGuyxMGvlCqQjVX/HD6JEBhBB4iOJF94=
-github.com/whj1990/app-mine v0.0.0-20230202060749-183c0acee2e7/go.mod h1:NdjU5EnMK1+HLE4/paSZEjc0aoAHi7jQupFzW17TBJ8=
+github.com/whj1990/app-mine v0.0.0-20230202065251-5db7d1384b41 h1:okdc3r/a4RR0WgctAhiWjkcBdbK0WjaDWKU1zUDTdnU=
+github.com/whj1990/app-mine v0.0.0-20230202065251-5db7d1384b41/go.mod h1:NdjU5EnMK1+HLE4/paSZEjc0aoAHi7jQupFzW17TBJ8=
 github.com/whj1990/go-common v0.0.0-20230202031541-49c0aa83b579 h1:W6urGlHiVSm52eOvNMwDRRncKCX1/TsUrlxtDK4Zw6Y=
 github.com/whj1990/go-common v0.0.0-20230202031541-49c0aa83b579/go.mod h1:sfeYxhU+yBV07OSryLqf/uSiqr7Qyr3/aOcN+jYm8wk=
 github.com/whj1990/go-core v0.0.0-20230129075933-3330ebde0054 h1:1n0pufBxdkbcwSC215l28WzcIfteTOwMxGi56qp7RF8=

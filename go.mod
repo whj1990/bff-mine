@@ -1,18 +1,18 @@
 module github.com/whj1990/bff-mine
 
-go 1.18
+go 1.19
 
 require (
 	github.com/gin-gonic/gin v1.8.1
 	github.com/go-playground/validator/v10 v10.10.0
 	github.com/google/wire v0.5.0
 	github.com/swaggo/swag v1.8.6
-    github.com/whj1990/app-mine v0.0.0-20230202060749-183c0acee2e7
 	github.com/whj1990/go-common v0.0.0-20230202031541-49c0aa83b579
 	github.com/whj1990/go-core v0.0.0-20230129075933-3330ebde0054
+	github.com/whj1990/app-mine v0.0.0-20230202065251-5db7d1384b41
 )
 replace (
-	github.com/whj1990/app-mine v0.0.0-20230202060749-183c0acee2e7 => /Users/wanghaijun/wwwroot/go/src/dp_backend/app-mine
+	github.com/whj1990/app-mine v0.0.0-20230202065251-5db7d1384b41 => /home/wwwroot/gowork/src/mine/app-mine
 )
 require (
 	github.com/KyleBanks/depth v1.2.1 // indirect
